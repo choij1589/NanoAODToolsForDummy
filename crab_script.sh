@@ -9,7 +9,6 @@ else
 # source /cvmfs/cms.cern.ch/cmsset_default.sh
 # cmsenv
 # cd -
-ls -lR .
 echo "ENV..................................."
 env 
 echo "VOMS"
@@ -28,5 +27,7 @@ mv module $CMSSW_BASE/module
 mv python $CMSSW_BASE/python
 
 echo Found Proxy in: $X509_USER_PROXY
-python Dumb.py
+echo "Running Dumb.py by"
+echo `which python3`
+python3 Dumb.py --jobNum $1 --$2 --$3
 fi
